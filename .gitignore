@@ -53,7 +53,10 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
-
+cable-seg-sm/
+results/
+runs/
+wandb/
 # Translations
 *.mo
 *.pot

@@ -336,11 +336,11 @@ class ImageEnhancer:
             dest_img = f"{self.images_output_path}/{i}.jpg" 
             source = f"{self.image_to_process_path}/{file}"
             image = cv.imread(source)
-            image = self.resize_img(image, w, h)
-            image = self.apply_brightness_contrast(image, 100, 80)
-            image = self.hist_equalization(image)
-            image = self.clahe_cv(image)
-            image = self.augmentation(image, seed)
+            #image = self.resize_img(image, w, h)
+            image = self.apply_brightness_contrast(image, 30, 100)
+            #image = self.hist_equalization(image)
+            #image = self.clahe_cv(image)
+            #image = self.augmentation(image, seed)
             
             cv.imshow("Img", image)
             cv.imwrite(dest_img, image)
@@ -356,9 +356,9 @@ class ImageEnhancer:
             
             
 if __name__ == "__main__":
-    images_to_change_path = "../cable_dataset/train/images/"
-    image_to_process_path = "../datasets/cable_dataset/train/images/original/"
-    images_output_path = "../cable_dataset/train/images/pr" 
+    images_to_change_path = "/home/nata-brain/Documents/proj/image-enhancer/datasets/cable_dataset_tester/images/dae_dataset/val/test/bad"
+    image_to_process_path = "/home/nata-brain/Documents/proj/image-enhancer/datasets/cable_dataset_tester/images/dae_dataset/val/test/bad"
+    images_output_path = "/home/nata-brain/Documents/proj/image-enhancer/datasets/cable_dataset_tester/images/dae_dataset/val/test/bad/pr" 
     
     processing = ImageEnhancer(images_to_change_path, image_to_process_path,images_output_path )
     processing.preprocessing_image(320, 320)
